@@ -1,16 +1,17 @@
-const currentTasks = document.getElementById('task_current');
-const deletedTasks = document.getElementById('task_trash');
-const completedTasks = document.getElementById('task_complete');
+const  CurrentTasks = document.getElementById('task_current');
+const  CompletedTasks= document.getElementById('task_complete');
+const  TrashedTasks= document.getElementById('task_trash');
 
-let taskQtt = [];
-let curTaskNum = 0;
-let remTaskNum = 0;
+//let curTasksQtt = [];
 
 function setTask() {
-    let newtask = document.getElementById("task_name").value;
-    if(newtask.length>0)
+    let taskName = document.getElementById("task_name").value;
+    let taskDesc = document.getElementById("task_desc").value;
+
+    if(taskName.length>0)
     {
-        addCurrentTask(newtask);
+        if(taskDesc.length<=0){taskDesc="No Description";}
+        addCurrentTask(taskName,taskDesc);
     }
     else
     {
@@ -18,32 +19,28 @@ function setTask() {
     }
 }
 
-function addCurrentTask(task)
+function addCurrentTask(name,desc)
 {
-    currentTasks.innerHTML+=`<div id="CT${curTaskNum}" class="cur_task">
-    <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
-    <input class="select_task" type="checkbox">${task}</label></div>`;
-    curTaskNum++;
-}
-
-function trashTasks(mode)
-{
-    let selectedTasks=[];
-    for(let i=0; i<currentTasks.childElementCount; i++)
-    {
-        console.log(currentTasks.childNodes[i+1].checked);
-    }
+    CurrentTasks.innerHTML+=`<div class="task cur_task">
+        <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
+        <input class="select_task" type="checkbox"><div>
+        <p>${name}</p>
+        <p>${desc}</p>
+        </div>
+        </label>
+        </div>`;
 }
 
 function completeTask(x)
 {
-    x.remove();
+    x.classList.replace("cur_task","com_task");
+    CompletedTasks.appendChild(x);
+    console.log(x);
 }
 
-
-// alert('TAREA AGREGADA COMO: ' + newtask);
+// curTasksQtt[curTasksQtt.length]=0;
+// reorderTask(curTasksQtt);
+// function deleteTasks(){}
+// function trashTasks(mode){let selectedTasks=[];for(let i=0; i<currentTasks.childElementCount; i++){console.log(currentTasks.childNodes[i+1].checked);}}
 // taskQtt[parseInt(x.id.substring(2))]=0;
-// for(let i=0; i<taskQtt.length; i++){if(taskQtt[i]=="0"){taskQtt[i]=taskQtt[i+1];taskQtt[i+1]="0";document.getElementById('CT' + i).id='CT' + i;}}
-// console.log(currentTasks.childNodes[i].getElementById('checkTask'+[i]));
-// switch(mode){case "CURRENT":break;case "COMPLETED":break;case "TRASH":}
-// taskQtt[curTaskNum]=newtask.value;
+// function reorderTask(task){for(let i=0; i<task.length; i++){if(task[i]==0}{if(task[i+1]!=null){task[i]=task[i+1];}else{task[i]=task.length;}}console.log(task[i]);}}

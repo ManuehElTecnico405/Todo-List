@@ -1,46 +1,60 @@
-h1 {
+*
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1
+{
     color: brown;
     font-weight: bold;
     text-decoration: underline;
-    font-family: 'Courier New', Courier, monospace;    
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
+/* html, body */
+/* { */
+    /* margin: 1%; */
+    /* padding: 0; */
+    /* height: 100%; */
+/* } */
 
-body {
-    background-color: rgb(10,10,100);
+body
+{
     color:azure;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     margin: 20px;
-    border: 10px rgb(5,5,60) solid;
     border-radius: 2px;
-    padding: 30px;
     box-sizing: border-box;
- }
+    border: 10px rgb(5,5,60) solid;
+    background-color: rgb(10,10,100);
 
- #task_send {
-    border-radius: 30px;
- }
-
-#task_title {
-    color:black;
-    font-family: 'Courier New', Courier, monospace;
 }
 
-#task_name {
+#task_send
+{
+    border-radius: 30px;
+}
+
+#task_title
+{
+    color:black;
+}
+
+#task_name
+{
     color:brown;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .cur_task
+{
+    opacity: 1;
+}
+.com_task
+{
+    opacity: 0.5;
+}
+
+.task
 {
     padding: 5px;
     margin-bottom: 5px;
@@ -59,4 +73,16 @@ body {
 {
     width: 25px;
     height: 25px;
+}
+
+header
+{
+    text-align: center;
+    margin-top: 1px;
+}
+
+#search
+{
+    display: inline-grid;
+    margin: auto;
 }
