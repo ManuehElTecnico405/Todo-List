@@ -2,8 +2,6 @@ const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
 const  TrashedTasks= document.getElementById('task_trash');
 
-//let curTasksQtt = [];
-
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
@@ -37,10 +35,3 @@ function completeTask(x)
     CompletedTasks.appendChild(x);
     console.log(x);
 }
-
-// curTasksQtt[curTasksQtt.length]=0;
-// reorderTask(curTasksQtt);
-// function deleteTasks(){}
-// function trashTasks(mode){let selectedTasks=[];for(let i=0; i<currentTasks.childElementCount; i++){console.log(currentTasks.childNodes[i+1].checked);}}
-// taskQtt[parseInt(x.id.substring(2))]=0;
-// function reorderTask(task){for(let i=0; i<task.length; i++){if(task[i]==0}{if(task[i+1]!=null){task[i]=task[i+1];}else{task[i]=task.length;}}console.log(task[i]);}}
