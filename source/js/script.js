@@ -47,4 +47,3 @@ function completeTask(x)
 // console.log(currentTasks.childNodes[i].getElementById('checkTask'+[i]));
 // switch(mode){case "CURRENT":break;case "COMPLETED":break;case "TRASH":}
 // taskQtt[curTaskNum]=newtask.value;
-// switch(mode){case "CURRENT":break;case "COMPLETED":break;case "TRASH":}
