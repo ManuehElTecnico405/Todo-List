@@ -79,3 +79,13 @@ body {
     cursor: pointer;
 }
 
+#edit_button {
+    background-image: url('https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
