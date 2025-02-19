@@ -22,7 +22,9 @@ function addCurrentTask(task)
 {
     currentTasks.innerHTML+=`<div id="CT${curTaskNum}" class="cur_task">
     <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
-    <input class="select_task" type="checkbox">${task}</label></div>`;
+    <input class="select_task" type="checkbox">${task}
+    <input type="button" value="Editar" onclick="editTask(this.parenyNode)">
+    </label></div>`;
     curTaskNum++;
 }
 
@@ -31,14 +33,46 @@ function trashTasks(mode)
     let selectedTasks=[];
     for(let i=0; i<currentTasks.childElementCount; i++)
     {
+        if (currentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(currentTasks.childNodes[i+1]);
         console.log(currentTasks.childNodes[i+1].checked);
     }
 }
+deletedTasks.forEach(task => {
+    task.remove();
+    
+});
 
 function completeTask(x)
 {
     x.remove();
 }
+
+function deleteAllTasks(){
+    currentTasks.innerHTML = ""
+    completedTasks.innerHTML = ""
+    deletedTasks.innerHTML = ""
+
+}
+
+function editTask (taskElement){
+    let currentText = taskElement.childNodes[3].nodeValue
+    let inputField = document.createElement("input")
+    inputField.type = "text"
+    inputField.value = currentText
+    let saveButton = document.createElement("input")
+    saveButton.type = "botton"
+    saveButton.value = "Guardar"
+    saveButton.onclick = function(){
+        taskElement.childNodes[3].nodeValue = inputField.value
+        taskElement.removeCild(inputField)
+        taskElement.removeCild(saveButton)
+        alert("¡Camio guardado correctamente!")
+    }
+    taskElement.replaceChild(inputField, taskElement.childNodes[3])
+    taskElement.appendChild(saveButton)
+}
+
 
 
 // alert('TAREA AGREGADA COMO: ' + newtask);
