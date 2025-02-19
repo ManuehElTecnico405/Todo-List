@@ -2,6 +2,9 @@ const currentTasks = document.getElementById('task_current');
 const deletedTasks = document.getElementById('task_trash');
 const completedTasks = document.getElementById('task_complete');
 
+document.getElementById("trash_button").innerHTML = `
+    <img src="https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg" alt="Papelera" style="width:20px; height:20px">`;
+
 let taskQtt = [];
 let curTaskNum = 0;
 let remTaskNum = 0;
@@ -21,8 +24,9 @@ function setTask() {
 function addCurrentTask(task)
 {
     currentTasks.innerHTML+=`<div id="CT${curTaskNum}" class="cur_task">
-    <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
-    <input class="select_task" type="checkbox">${task}</label></div>`;
+    <input id="checkTask" class="delete_task" type="submit" onclick="completeTask(this.parentNode)">
+    <input class="select_task" type="checkbox">
+    ${task}</label></div>`;
     curTaskNum++;
 }
 
