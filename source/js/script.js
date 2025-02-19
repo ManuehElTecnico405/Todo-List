@@ -23,7 +23,7 @@ function addCurrentTask(task)
     currentTasks.innerHTML+=`<div id="CT${curTaskNum}" class="cur_task">
     <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
     <input class="select_task" type="checkbox">${task}
-    <input type="button" value="Editar" onclick="editTask(this.parenyNode)">
+    <input type="button" value="" id="edit_button" onclick="editTask(this.parenyNode)">
     </label></div>`;
     curTaskNum++;
 }
