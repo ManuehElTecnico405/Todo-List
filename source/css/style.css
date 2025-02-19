@@ -24,7 +24,14 @@ body {
  }
 
  #task_send {
+    background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
     border-radius: 30px;
+    cursor: pointer;
  }
 
 #task_title {
@@ -60,3 +67,15 @@ body {
     width: 25px;
     height: 25px;
 }
+
+#trash_button {
+    background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
