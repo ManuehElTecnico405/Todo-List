@@ -22,7 +22,7 @@ function addCurrentTask(name,desc)
 {
     CurrentTasks.innerHTML+=
         `<div class="task cur_task">
-        <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
+        <input id="checkTask" class="delete_task" type="submit" value="" onclick="completeTask(this.parentNode)">
         <input type="button" value="" id="edit_button" onclick="editTask(this.parenyNode)">
         <input class="select_task" type="checkbox">
         <p>${name}</p><p>${desc}</p>
@@ -33,11 +33,11 @@ function addCurrentTask(name,desc)
 function trashTasks(mode)
 {
     let selectedTasks=[];
-    for(let i=0; i<currentTasks.childElementCount; i++)
+    for(let i=0; i<CurrentTasks.childElementCount; i++)
     {
-        if (currentTasks.childNodes[i+1].querySelector("select_task").checked){}
-        selectedTasks.push(currentTasks.childNodes[i+1]);
-        console.log(currentTasks.childNodes[i+1].checked);
+        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+        console.log(CurrentTasks.childNodes[i+1].checked);
     }
 }
 
@@ -49,9 +49,9 @@ function completeTask(x)
 }
 
 function deleteAllTasks(){
-    currentTasks.innerHTML = ""
-    completedTasks.innerHTML = ""
-    deletedTasks.innerHTML = ""
+    CurrentTasks.innerHTML = ""
+    CompletedTasks.innerHTML = ""
+    deleteAllTasks.innerHTML = ""
 
 }
 
@@ -91,3 +91,4 @@ function editTask (taskElement){
 //<input class="select_task" type="checkbox">${task}
 // function addCurrentTask(task){currentTasks.innerHTML+=}
 // deletedTasks.forEach(task => {task.remove();});
+//function deleteAllTasks.forEach(task => {task.remove();});

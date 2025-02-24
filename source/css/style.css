@@ -24,6 +24,9 @@ body
     font-size: 15px;
     border-radius: 2px;
     box-sizing: border-box;
+/*     border: 10px rgb(5,5,60) solid; */
+/*     background: rgb(48,70,50); */
+/*     background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
 header
 {
@@ -49,8 +52,10 @@ header
 h1
 {
     color: var(--secondary_text-color);
-
+  
     font-weight: bold;
+    font-size: 3em;
+    margin-top: 11px;
     text-decoration: underline;
 }
 
@@ -88,7 +93,18 @@ h1
 }
 
 #edit_button {
-    background-image: url('https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png');
+    background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#checkTask {
+    background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: center;
