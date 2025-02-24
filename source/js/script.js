@@ -33,17 +33,17 @@ function addCurrentTask(name,desc)
 function trashTasks(mode)
 {
     let selectedTasks=[];
-    for(let i=0; i<currentTasks.childElementCount; i++)
+    for(let i=0; i<CurrentTasks.childElementCount; i++)
     {
-        if (currentTasks.childNodes[i+1].querySelector("select_task").checked){}
-        selectedTasks.push(currentTasks.childNodes[i+1]);
-        console.log(currentTasks.childNodes[i+1].checked);
+        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+        console.log(CurrentTasks.childNodes[i+1].checked);
     }
 }
-deletedTasks.forEach(task => {
-    task.remove();
+//function deleteAllTasks.forEach(task => {
+//    task.remove();
     
-});
+//});
 
 function completeTask(x)
 {
