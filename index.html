@@ -11,26 +11,32 @@
                 <input type="submit" id="task_send" value="" onclick="setTask()">
                 <div id="search">
                     <input type="text" id="task_name" value="test">
-                    <input type="text" id="task_desc" value="test">
+                    <textarea id="task_desc" value="test" maxlength="200"></textarea>
                 </div>
                 <input type="submit" id="trash_button" value="" onclick="trashTasks('CURRENT')">
             </label>
         </header>
         <article>
+            <div id="current_task_tab">
                 <h2>ACTUALES</h2>
                 <label>SELECT ALL</label>
                 <input type="checkbox" id="current_select">
                 <div id="task_current"></div>
-                <br>
+            </div>
+            <br>
+            <div id="completed_task_tab">
                 <h2>COMPLETADAS</h2>
-                <label>SELECT ALL</label>
-                <input type="checkbox" id="current_complete">
+                </label>SELECT ALL</label>
+                <input type="checkbox" id="complete_select" >
                 <div id="task_complete"></div>
-                <br>
+            </div>
+            <br>
+            <div id="trashed_task_tab">
                 <h2>PAPELERA</h2>
                 </label>SELECT ALL</label>
-                <input type="checkbox" id="current_trash" >
+                <input type="checkbox" id="trash_select" >
                 <div id="task_trash"></div>
+            </div>
         </article>
         <footer></footer>
         <script src="./source/js/script.js"></script>

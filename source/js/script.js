@@ -2,6 +2,18 @@ const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
 const  TrashedTasks= document.getElementById('task_trash');
 
+//SAVING TEST (NO TOCAR!!!)
+/*
+const fs = require(FileSystem);
+window.onload=saveData();
+function saveData()
+{
+    fs.writeFile('./data/data.txt', "TEST", (err) => {
+        if (err) {console.error('Error al guardar el archivo:', err);}
+        else{console.log('Archivo guardado exitosamente.');}
+    });
+}*/
+
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
@@ -74,9 +86,9 @@ function editTask (taskElement){
 }
 
 //html
-//texto en botones (añadir y borrar)
-//Falta el icono de completar
-//Posicion de las barras de tarea
+//texto en botones (añadir y borrar) VV
+//Falta el icono de completar VV
+//Posicion de las barras de tarea VV
 
 //css
 //Mejorar diseño del header
