@@ -53,9 +53,9 @@ function completeTask(x)
 }
 
 function deleteAllTasks(){
-    currentTasks.innerHTML = ""
-    completedTasks.innerHTML = ""
-    deletedTasks.innerHTML = ""
+    CurrentTasks.innerHTML = ""
+    CompletedTasks.innerHTML = ""
+    deleteAllTasks.innerHTML = ""
 
 }
 
