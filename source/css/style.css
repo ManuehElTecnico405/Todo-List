@@ -1,4 +1,4 @@
-*{font-family: 'Courier New', Courier, monospace;}
+/* VARS */
 :root
 {
     --primary_background-color: rgb(20,20,120);
@@ -11,36 +11,40 @@
     --input_text-color: rgb(0,0,0);
     --background-color: rgb(0,0,0);
 }
-
+/* GLOBAL */
+*{font-family: 'Courier New', Courier, monospace;}
 html{background-color: var(--background-color);}
 body
 {
     background-color: var(--primary_background-color);
     border: 10px var(--primary_border-color) solid;
     color:var(--primary_text-color);
-
     margin: 20px;
     font-size: 15px;
     border-radius: 2px;
     box-sizing: border-box;
     text-align: left;
     text-indent: 1em;
-/*     border: 10px rgb(5,5,60) solid; */
-/*     background: rgb(48,70,50); */
-/*     background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
+/*  border: 10px rgb(5,5,60) solid; background: rgb(48,70,50); background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
 
 header
 {
     background-color: var(--secondary_background-color);
     border: 5px var(--secondary_border-color) solid;
-
     margin-top: 0%;
     padding-bottom: 20px;
     text-align: center;
 }
+textarea{resize: none;}
+input:hover, textarea:hover{opacity: 0.8;}
 
- #task_send {
+/* CLASSES */
+.container {padding: 16px;}
+
+/* IDs */
+#task_send
+{
     background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
     background-size: 18px 18px;
     background-repeat: no-repeat;
@@ -54,7 +58,6 @@ header
 h1
 {
     color: var(--secondary_text-color);
-  
     font-weight: bold;
     font-size: 3em;
     margin-top: 11px;
@@ -93,7 +96,6 @@ h1
 #task_desc
 {
     color:var(--input_text-color);
-    resize: none;
     width: 500px;
     height: 80px;
     margin-top: 5px;
@@ -145,3 +147,52 @@ h1
 .cur_task{opacity: 1;}
 .com_task{opacity: 0.5;}
 /* #current_task_tab > h2, #completed_task_tab > h2, #trashed_task_tab > h2{background-color: var(--secondary_background-color);border: 5px, var(--secondary_border-color), solid;} */
+
+/* EDIT INPUTS GUI */
+#newTitle, #newDesc
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;  
+}
+/* EDIT CONFIRMATION BUTTONS */
+#confirm_Changes, #cancel_Changes
+{
+    color: var(--primary_text-color);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;  
+}
+#confirm_Changes{background-color: green;}
+#cancel_Changes{background-color: red;}
+
+/* EDIT GUI */
+.modal
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+  background-color: var(--secondary_background-color);
+  margin: 5% auto 15% auto;
+  border: 8px solid var(--secondary_border-color);
+  width: 60%;
+}
+/* EDIT GUI ANIMATION */
+.animate{-webkit-animation: animatezoom 0.6s;animation: animatezoom 0.6s;}
+@-webkit-keyframes animatezoom{from{-webkit-transform: scale(0)}to{-webkit-transform: scale(1)}}
+@keyframes animatezoom{from{transform: scale(0)}to{transform: scale(1)}}
