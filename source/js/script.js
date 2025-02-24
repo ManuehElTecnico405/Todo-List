@@ -28,12 +28,6 @@ function addCurrentTask(name,desc)
         <p>${name}</p><p>${desc}</p>
         </label>
         </div>`;
-  
-function addCurrentTask(task)
-{
-    currentTasks.innerHTML+=
-    
-    
 }
 
 function trashTasks(mode)
@@ -82,6 +76,21 @@ function editTask (taskElement){
     taskElement.replaceChild(inputField, taskElement.childNodes[3])
     taskElement.appendChild(saveButton)
 }
-  
+
+//html
+//texto en botones (añadir y borrar)
+//Falta el icono de completar
+//Posicion de las barras de tarea
+
+//css
+//Mejorar diseño del header
+//Añadir fondo difuminado (o algo pa decorar)
+
+//js
+//Boton de Editar
+//Boton Seleccionar todo (current, completed & trashed)
+//Reordenar mejor botones (Seguramente se requiera css)
+
 //x.remove();
 //<input class="select_task" type="checkbox">${task}
+// function addCurrentTask(task){currentTasks.innerHTML+=}
