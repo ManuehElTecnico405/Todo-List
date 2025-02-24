@@ -78,6 +78,24 @@ function openEdit(x)
     newTitle.value="";
     newDesc.value="";
 }
+
+function seltodo() {
+    let selected = true;
+    const btnSeleccionar = document.getElementById("task_current");
+    if (selected) {
+        checkboxes.forEach(function(checkbox) {
+        checkbox.checked = true;
+    });
+        btnSeleccionar.value = "Deseleccionar";
+      } else {
+        checkboxes.forEach(function(checkbox) {
+          checkbox.checked = false;
+        });
+        btnSeleccionar.value = "Seleccionar";
+      }
+      selected = false;
+    }
+}
 function sendEdit(mode){document.getElementById('id01').style.display='none';}
 
 //switch(mode){case "CONFIRM": ;break;case "CANCEL": return 0;}
