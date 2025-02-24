@@ -6,7 +6,7 @@
     --primary_border-color: rgb(20,20,80);
     --secondary_border-color: rgb(60,20,80);
     --primary_text-color: rgb(230,230,230);
-    --secondary_text-color: rgb(120,120,120);
+    --secondary_text-color: rgb(255, 255, 255);
 
     --input_text-color: rgb(0,0,0);
     --background-color: rgb(0,0,0);
@@ -23,11 +23,13 @@ body
     font-size: 15px;
     border-radius: 2px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
+    text-indent: 1em;
 /*     border: 10px rgb(5,5,60) solid; */
 /*     background: rgb(48,70,50); */
 /*     background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
+
 header
 {
     background-color: var(--secondary_background-color);
@@ -63,6 +65,8 @@ h1
 {
     width: 15px;
     height: 15px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .task
@@ -134,6 +138,8 @@ h1
     border: 5px, var(--secondary_border-color), solid;
     padding-bottom: 60px;
     margin: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .cur_task{opacity: 1;}
