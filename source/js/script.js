@@ -67,6 +67,24 @@ function deleteAllTasks(){
 
 }
 
+
+function seltodo() {
+    let selected = true;
+    const btnSeleccionar = document.getElementById("task_current");
+    if (selected) {
+        checkboxes.forEach(function(checkbox) {
+        checkbox.checked = true;
+    });
+        btnSeleccionar.value = "Deseleccionar";
+      } else {
+        checkboxes.forEach(function(checkbox) {
+          checkbox.checked = false;
+        });
+        btnSeleccionar.value = "Seleccionar";
+      }
+      selected = false;
+    };
+
 function editTask (taskElement){
     let currentText = taskElement.childNodes[3].nodeValue
     let inputField = document.createElement("input")
