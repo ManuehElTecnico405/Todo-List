@@ -17,17 +17,39 @@ function setTask() {
     }
 }
 
+
 function addCurrentTask(name,desc)
 {
-    CurrentTasks.innerHTML+=`<div class="task cur_task">
+    CurrentTasks.innerHTML+=
+        `<div class="task cur_task">
         <input id="checkTask" class="delete_task" type="submit" value="[C]" onclick="completeTask(this.parentNode)">
-        <input class="select_task" type="checkbox"><div>
-        <p>${name}</p>
-        <p>${desc}</p>
-        </div>
+        <input type="button" value="" id="edit_button" onclick="editTask(this.parenyNode)">
+        <input class="select_task" type="checkbox">
+        <p>${name}</p><p>${desc}</p>
         </label>
         </div>`;
+  
+function addCurrentTask(task)
+{
+    currentTasks.innerHTML+=
+    
+    
 }
+
+function trashTasks(mode)
+{
+    let selectedTasks=[];
+    for(let i=0; i<currentTasks.childElementCount; i++)
+    {
+        if (currentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(currentTasks.childNodes[i+1]);
+        console.log(currentTasks.childNodes[i+1].checked);
+    }
+}
+deletedTasks.forEach(task => {
+    task.remove();
+    
+});
 
 function completeTask(x)
 {
@@ -35,3 +57,31 @@ function completeTask(x)
     CompletedTasks.appendChild(x);
     console.log(x);
 }
+
+function deleteAllTasks(){
+    currentTasks.innerHTML = ""
+    completedTasks.innerHTML = ""
+    deletedTasks.innerHTML = ""
+
+}
+
+function editTask (taskElement){
+    let currentText = taskElement.childNodes[3].nodeValue
+    let inputField = document.createElement("input")
+    inputField.type = "text"
+    inputField.value = currentText
+    let saveButton = document.createElement("input")
+    saveButton.type = "botton"
+    saveButton.value = "Guardar"
+    saveButton.onclick = function(){
+        taskElement.childNodes[3].nodeValue = inputField.value
+        taskElement.removeCild(inputField)
+        taskElement.removeCild(saveButton)
+        alert("¡Cambio guardado correctamente!")
+    }
+    taskElement.replaceChild(inputField, taskElement.childNodes[3])
+    taskElement.appendChild(saveButton)
+}
+  
+//x.remove();
+//<input class="select_task" type="checkbox">${task}

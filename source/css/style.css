@@ -16,6 +16,16 @@ header
     margin-top: 1px;
 }
 
+ #task_send {
+    background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
 h1
 {
@@ -50,11 +60,32 @@ h1
     color:brown;
     font-weight: bold;
 }
+
 #task_desc
 {
     color:black;
     font-weight: bold;
 }
-
-#task_send{border-radius: 30px;}
 #task_title{color:black;}
+
+#trash_button {
+    background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#edit_button {
+    background-image: url('https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
