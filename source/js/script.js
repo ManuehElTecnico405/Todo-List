@@ -61,12 +61,12 @@ function editTask (taskElement){
     inputField.type = "text"
     inputField.value = currentText
     let saveButton = document.createElement("input")
-    saveButton.type = "botton"
+    saveButton.type = "button"
     saveButton.value = "Guardar"
     saveButton.onclick = function(){
         taskElement.childNodes[3].nodeValue = inputField.value
-        taskElement.removeCild(inputField)
-        taskElement.removeCild(saveButton)
+        taskElement.removeChild(inputField)
+        taskElement.removeChild(saveButton)
         alert("¡Cambio guardado correctamente!")
     }
     taskElement.replaceChild(inputField, taskElement.childNodes[3])
