@@ -1,19 +1,38 @@
 *{font-family: 'Courier New', Courier, monospace;}
+:root
+{
+    --primary_background-color: rgb(20,20,120);
+    --secondary_background-color: rgb(80,20,120);
+    --primary_border-color: rgb(20,20,80);
+    --secondary_border-color: rgb(60,20,80);
+    --primary_text-color: rgb(230,230,230);
+    --secondary_text-color: rgb(120,120,120);
+
+    --input_text-color: rgb(0,0,0);
+    --background-color: rgb(0,0,0);
+}
 html, body{height: 100%;}
+
+html{background-color: var(--background-color);}
 body
 {
-    color:azure;
-    font-size: 15px;
+    background-color: var(--primary_background-color);
+    border: 10px var(--primary_border-color) solid;
+    color:var(--primary_text-color);
+
     margin: 20px;
+    font-size: 15px;
     border-radius: 2px;
     box-sizing: border-box;
-    border: 10px rgb(5,5,60) solid;
-    background-color: rgb(10,10,100);
 }
 header
 {
+    background-color: var(--secondary_background-color);
+    border: 5px var(--secondary_border-color) solid;
+
+    margin-top: 0%;
+    padding-bottom: 20px;
     text-align: center;
-    margin-top: 1px;
 }
 
  #task_send {
@@ -29,7 +48,8 @@ header
 
 h1
 {
-    color: brown;
+    color: var(--secondary_text-color);
+
     font-weight: bold;
     text-decoration: underline;
 }
@@ -42,31 +62,19 @@ h1
 
 .task
 {
-    padding: 5px;
+    background-color: var(--secondary_background-color);
+    border: 5px var(--secondary_border-color) solid;
     margin-bottom: 5px;
     border-radius: 5px;
-    border: 5px rgb(20,20,150) solid;
-    background-color: rgb(5,5,120);
+    padding: 5px;
 }
-.cur_task{opacity: 1;}
-.com_task{opacity: 0.5;}
 #search
 {
     display: inline-grid;
     margin: auto;
 }
-#task_name
-{
-    color:brown;
-    font-weight: bold;
-}
-
-#task_desc
-{
-    color:black;
-    font-weight: bold;
-}
-#task_title{color:black;}
+#task_name{color:var(--input_text-color);}
+#task_desc{color:var(--input_text-color);}
 
 #trash_button {
     background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');
@@ -89,3 +97,6 @@ h1
     border-radius: 3px;
     cursor: pointer;
 }
+
+.cur_task{opacity: 1;}
+.com_task{opacity: 0.5;}

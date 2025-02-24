@@ -40,10 +40,6 @@ function trashTasks(mode)
         console.log(currentTasks.childNodes[i+1].checked);
     }
 }
-deletedTasks.forEach(task => {
-    task.remove();
-    
-});
 
 function completeTask(x)
 {
@@ -94,3 +90,4 @@ function editTask (taskElement){
 //x.remove();
 //<input class="select_task" type="checkbox">${task}
 // function addCurrentTask(task){currentTasks.innerHTML+=}
+// deletedTasks.forEach(task => {task.remove();});
