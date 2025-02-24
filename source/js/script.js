@@ -88,14 +88,11 @@ function seltodo() {
     });
         btnSeleccionar.value = "Deseleccionar";
       } else {
-        checkboxes.forEach(function(checkbox) {
-          checkbox.checked = false;
-        });
+        checkboxes.forEach(function(checkbox) {checkbox.checked = false;});
         btnSeleccionar.value = "Seleccionar";
-      }
-      selected = false;
     }
-}
+    selected = false;
+};
 function sendEdit(mode){document.getElementById('id01').style.display='none';}
 
 //switch(mode){case "CONFIRM": ;break;case "CANCEL": return 0;}
