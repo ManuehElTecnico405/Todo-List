@@ -10,8 +10,8 @@
             <label>
                 <input type="submit" id="task_send" value="" onclick="setTask()">
                 <div id="search">
-                    <input type="text" id="task_name" placeholder="Titulo.">
-                    <textarea id="task_desc" maxlength="200" placeholder="Descripción."></textarea>
+                    <input type="text" id="task_name" placeholder="Titulo">
+                    <textarea id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
                 </div>
                 <input type="submit" id="trash_button" value="" onclick="trashTasks('CURRENT')">
             </label>
@@ -38,6 +38,18 @@
                 <div id="task_trash"></div>
             </div>
         </article>
+        <div id="id01" class="modal">
+            <div class="modal-content animate">          
+                <div class="container">
+                    <p>INSERTA EL NUEVO TITULO</p>
+                    <input type="text" id="newTitle">
+                    <p>INSERTA LA NUEVA DESCRIPCION</p>
+                    <textarea id="newDesc" maxlength="200"></textarea>
+                    <input type="submit" id="confirm_Changes" value="CONFIRMAR CAMBIOS" onclick="sendEdit('CONFIRM')">
+                    <input type="submit" id="cancel_Changes" value="CANCELAR CAMBIOS" onclick="sendEdit('CANCEL');">
+                </div>
+            </div>
+          </div>          
         <footer></footer>
         <script src="./source/js/script.js"></script>
     </body>
