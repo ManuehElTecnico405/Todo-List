@@ -10,32 +10,31 @@
             <h1>TO-DO LIST</h1>
             <label>
                 <input type="submit" id="task_send" value="" onclick="setTask()">
-                <div id="search">
-                    <input type="text" id="task_name" placeholder="Titulo">
+                <div class="taskCreatorGui">
+                    <input type="text" id="task_name" placeholder="Titulo" value="test">
                     <textarea id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
                 </div>
-                <input type="submit" id="trash_button" value="" onclick="trashTasks('CURRENT')">
             </label>
         </header>
         <article>
             <div id="current_task_tab">
                 <h2>ACTUALES</h2>
                 <label>SELECT ALL</label>
-                <input type="checkbox" id="cur_sel" onclick="seltodo()">
+                <input type="checkbox" id="cur_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_current"></div>
             </div>
             <br>
             <div id="completed_task_tab">
                 <h2>COMPLETADAS</h2>
                 </label>SELECT ALL</label>
-                <input type="checkbox" id="com_sel" >
+                <input type="checkbox" id="com_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_complete"></div>
             </div>
             <br>
             <div id="trashed_task_tab">
                 <h2>PAPELERA</h2>
                 </label>SELECT ALL</label>
-                <input type="checkbox" id="del_sel" >
+                <input type="checkbox" id="del_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_trash"></div>
             </div>
         </article>
