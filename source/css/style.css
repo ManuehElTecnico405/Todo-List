@@ -53,9 +53,14 @@ input:hover, textarea:hover{opacity: 0.8;}
 .SendButton{background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');}
 .Task_CompleteButton{background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');}
 .Task_EditButton{background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');}
-.Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');}
+.Task_TrashButton{background-image: url('../../img/trash_closed_transparent.png');}
+.Task_TrashButton:hover{background-image: url('../../img/trash_open_transparent.png');}
 .Task_Current{opacity: 1;}
 .Task_Complete{opacity: 0.5;}
+
+/* BASURA ANTERIOR IMG
+.Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');} 
+*/
 
 .buttonStyle
 {
