@@ -80,7 +80,7 @@ h1
     border-radius: 5px;
     padding: 5px;
 }
-#search
+.taskCreatorGui
 {
     display: inline-grid;
     margin: auto;
