@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+    <head><meta charset="UTF-8">
+        <link rel="shortcut icon" href="./img/favicon.png">
         <link rel="stylesheet" href="./source/css/style.css">
         <title>TO-DO LIST</title>
     </head>
@@ -9,10 +9,10 @@
         <header>
             <h1>TO-DO LIST</h1>
             <label>
-                <input type="submit" id="task_send" value="" onclick="setTask()">
-                <div class="taskCreatorGui">
-                    <input type="text" id="task_name" placeholder="Titulo" value="test">
-                    <textarea id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
+                <input type="button" class="buttonStyle SendButton" onclick="setTask()">
+                <div class="textboxes">
+                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="test">
+                    <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
                 </div>
             </label>
         </header>
