@@ -2,20 +2,7 @@ const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
 const  TrashedTasks= document.getElementById('task_trash');
 
-//let selAllComplete = document.getElementById('com_sel');
-//let selAllDelete = document.getElementById('del_sel');
-
-//SAVING TEST (NO TOCAR!!!)
-/*
-const fs = require(FileSystem);
-window.onload=saveData();
-function saveData()
-{
-    fs.writeFile('./data/data.txt', "TEST", (err) => {
-        if (err) {console.error('Error al guardar el archivo:', err);}
-        else{console.log('Archivo guardado exitosamente.');}
-    });
-}*/
+window.onload = loadTasks;
 
 function setTask() {
     let taskName = document.getElementById("task_name").value;
@@ -46,20 +33,16 @@ function loadTasks(){
     });
 }
 
-window.onload = loadTasks;
-
 function addCurrentTask(name,desc)
 {
     CurrentTasks.innerHTML+=
-        `<div class="task cur_task">
-        <input id="checkTask" class="delete_task" type="submit" value="" onclick="completeTask(this.parentNode)">
-        <input type="button" value="" id="edit_button"onclick="openEdit(this.parentNode)">
-        <input type="submit" id="trash_button" value="" onclick="trashTasks('CURRENT')">
-        <input class="select_task" type="checkbox" name="curTaskSel">
-        <h2 id="CT">${name}</h2>
-        <p id="CD">${desc}</p>
-        </label>
-        </div>`;
+        `<div class="task Task_Current">
+        <input type="checkbox" class="selectTask" name="current">
+        <input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode)">
+        <input type="button" class="buttonStyle Task_EditButton" onclick="openEdit(this.parentNode)">
+        <input type="button" class="buttonStyle Task_TrashButton" onclick="trashTasks('CURRENT')">
+        <h2 name="TaskName">${name}</h2>
+        <p name="TaskDescription">${desc}</p></div>`;
 }
 
 function trashTasks(mode)
@@ -79,12 +62,12 @@ function completeTask(x)
 {
     switch(x.classList[1])
     {
-        case "cur_task":
-            x.classList.replace("cur_task","com_task");
+        case "Task_Current":
+            x.classList.replace("Task_Current","Task_Complete");
             CompletedTasks.appendChild(x);
             break;
-        default:
-            x.classList.replace("com_task","cur_task");
+        case "Task_Complete":
+            x.classList.replace("Task_Complete","Task_Current");
             CurrentTasks.appendChild(x); 
     }
 }
@@ -100,8 +83,8 @@ function deleteAllTasks()
 
 function openEdit(x)
 {
-    //let curName = x.getElementById('CT');
-    //let curDesc = x.getElementById('CD');
+    let curName = x.getElementById('CT');
+    let curDesc = x.getElementById('CD');
     document.getElementById('id01').style.display='block';
     let newTitle = document.getElementById('newTitle');
     let newDesc = document.getElementById('newDesc');
@@ -154,3 +137,8 @@ function selectAll(checkbox)
 //PROBABLY USED IN A FUTURE ;)
 
 //x.remove();
+
+//ALL classes
+
+//taskCreatorGui (Interfaz de las barras donde va el nombre y la desc)
+//modal [Y variantes] (Todo lo relacionado con la interfaz del boton de edit))
