@@ -144,6 +144,14 @@ h1
     padding-right: 1em;
 }
 
+.task p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin: 10px;
+    text-indent: 0px;
+}
+
 .cur_task{opacity: 1;}
 .com_task{opacity: 0.5;}
 /* #current_task_tab > h2, #completed_task_tab > h2, #trashed_task_tab > h2{background-color: var(--secondary_background-color);border: 5px, var(--secondary_border-color), solid;} */
