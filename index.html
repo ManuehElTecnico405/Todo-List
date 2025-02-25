@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="./source/css/style.css">
         <title>TO-DO LIST</title>
     </head>
@@ -20,21 +21,21 @@
             <div id="current_task_tab">
                 <h2>ACTUALES</h2>
                 <label>SELECT ALL</label>
-                <input type="button" id="current_select" onclick="seltodo()">
+                <input type="checkbox" id="cur_sel" onclick="seltodo()">
                 <div id="task_current"></div>
             </div>
             <br>
             <div id="completed_task_tab">
                 <h2>COMPLETADAS</h2>
                 </label>SELECT ALL</label>
-                <input type="checkbox" id="complete_select" >
+                <input type="checkbox" id="com_sel" >
                 <div id="task_complete"></div>
             </div>
             <br>
             <div id="trashed_task_tab">
                 <h2>PAPELERA</h2>
                 </label>SELECT ALL</label>
-                <input type="checkbox" id="trash_select" >
+                <input type="checkbox" id="del_sel" >
                 <div id="task_trash"></div>
             </div>
         </article>
