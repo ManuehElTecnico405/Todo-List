@@ -17,11 +17,18 @@ function saveData()
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
+    //let cacheTask = {name: taskName, description: taskDesc};
 
     if(taskName.length>0)
     {
         if(taskDesc.length<=0){taskDesc="No Description";}
         addCurrentTask(taskName,taskDesc);
+        let newTask = { name: taskName, description: taskDesc };
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.push(newTask);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        document.getElementById("task_name").value = "";
+        document.getElementById("task_desc").value = "";
     }
     else
     {
@@ -29,6 +36,14 @@ function setTask() {
     }
 }
 
+function loadTasks(){
+    let task = JSON.parse(localStorage.getItem("tasks")) || [];
+    task.forEach(task =>{
+        addCurrentTask(task.name, task.description);
+    });
+}
+
+window.onload = loadTasks;
 
 function addCurrentTask(name,desc)
 {
@@ -45,6 +60,8 @@ function addCurrentTask(name,desc)
 
 function trashTasks(mode)
 {
+    deleteAllTasks
+    localStorage.removeItem("task")
     let selectedTasks=[];
     for(let i=0; i<CurrentTasks.childElementCount; i++)
     {
