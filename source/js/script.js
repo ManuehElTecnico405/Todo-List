@@ -56,22 +56,31 @@ function trashTasks(mode)
 
 function completeTask(x)
 {
-    x.classList.replace("cur_task","com_task");
-    CompletedTasks.appendChild(x);
+    switch(x.classList[1])
+    {
+        case "cur_task":
+            x.classList.replace("cur_task","com_task");
+            CompletedTasks.appendChild(x);
+            break;
+        default:
+            x.classList.replace("com_task","cur_task");
+            CurrentTasks.appendChild(x); 
+    }
 }
 
 function deleteAllTasks()
 {
-    CurrentTasks.innerHTML = ""
-    CompletedTasks.innerHTML = ""
-    deleteAllTasks.innerHTML = ""
+    CurrentTasks.innerHTML = "";
+    CompletedTasks.innerHTML = "";
+    deleteAllTasks.innerHTML = "";
 }
 
 // BOTON EDITAR
 
 function openEdit(x)
 {
-    //let curName = x.getElementById('CT');let curDesc = x.getElementById('CD');
+    //let curName = x.getElementById('CT');
+    //let curDesc = x.getElementById('CD');
     document.getElementById('id01').style.display='block';
     let newTitle = document.getElementById('newTitle');
     let newDesc = document.getElementById('newDesc');
@@ -88,33 +97,35 @@ function seltodo() {
     });
         btnSeleccionar.value = "Deseleccionar";
       } else {
-        checkboxes.forEach(function(checkbox) {
-          checkbox.checked = false;
-        });
+        checkboxes.forEach(function(checkbox) {checkbox.checked = false;});
         btnSeleccionar.value = "Seleccionar";
-      }
-      selected = false;
     }
-}
+    selected = false;
+};
 function sendEdit(mode){document.getElementById('id01').style.display='none';}
 
 //switch(mode){case "CONFIRM": ;break;case "CANCEL": return 0;}
 
+//HTML
+//Boton papelera más abajo / Boton papelera global
 
-//css
+//CSS
+//Paleta de colores
 //Añadir fondo difuminado (o algo pa decorar)
 
-//js
+//JS
+//Boton Editar
 //Boton Seleccionar todo (current, completed & trashed)
 //Reordenar mejor botones (Seguramente se requiera css)
+//Que se guarden los archivos
+
+//PROBABLY USED IN A FUTURE ;)
 
 //x.remove();
 //<input class="select_task" type="checkbox">${task}
 // function addCurrentTask(task){currentTasks.innerHTML+=}
 // deletedTasks.forEach(task => {task.remove();});
 //function deleteAllTasks.forEach(task => {task.remove();});
-
-
 //let currentText = taskElement.childNodes[3].nodeValue
 //let inputField = document.createElement("input")
 //inputField.type = "text"
