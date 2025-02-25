@@ -112,7 +112,13 @@ input:hover, textarea:hover{opacity: 0.8;}
     padding-left: 1em;
     padding-right: 1em;
 }
-
+.task p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin: 10px;
+    text-indent: 0px;
+}
 /* EDIT INPUTS GUI */
 
 #newTitle, #newDesc
