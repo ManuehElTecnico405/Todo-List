@@ -2,12 +2,10 @@ const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
 const  TrashedTasks= document.getElementById('task_trash');
 
-window.onload = loadTasks;
-
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
-    //let cacheTask = {name: taskName, description: taskDesc};
+    // let cacheTask = {name: taskName, description: taskDesc};
 
     if(taskName.length>0)
     {
@@ -24,6 +22,8 @@ function setTask() {
     {
         alert("INSERTE TEXTO");
     }
+    // EL GUARDADO NO ES EN TIEMPO REAL
+    // FUNCIONES COMO COMPLETAR O ELIMINAR TAREAS NO SE GUARDAN
 }
 
 function loadTasks(){
@@ -33,14 +33,14 @@ function loadTasks(){
     });
 }
 
-function addCurrentTask(name,desc)
+function addCurrentTask(name,desc) //AUN NO SE HAN REORDENADO LOS BOTONES DE LA TAREA (CSS)
 {
     CurrentTasks.innerHTML+=
         `<div class="task Task_Current">
         <input type="checkbox" class="selectTask" name="current">
         <input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode)">
-        <input type="button" class="buttonStyle Task_EditButton" onclick="openEdit(this.parentNode)">
-        <input type="button" class="buttonStyle Task_TrashButton" onclick="trashTasks('CURRENT')">
+        <input type="button" class="buttonStyle Task_EditButton" onclick="editTask(this.parentNode)">
+        <input type="button" class="buttonStyle Task_TrashButton" onclick="deleteTask(this.parentNode)">
         <h2 name="TaskName">${name}</h2>
         <p name="TaskDescription">${desc}</p></div>`;
 }
@@ -79,17 +79,23 @@ function deleteAllTasks()
     deleteAllTasks.innerHTML = "";
 }
 
+function deleteTask(x)
+{
+    localStorage.removeItem("tasks", x);
+    x.remove();
+}
+
 // BOTON EDITAR
 
-function openEdit(x)
+function editTask(x)
 {
-    let curName = x.getElementById('CT');
-    let curDesc = x.getElementById('CD');
     document.getElementById('id01').style.display='block';
+    let curName = x.getElementsByName("TaskName");
+    let curDesc = x.getElementsByName("TaskDescription");
     let newTitle = document.getElementById('newTitle');
     let newDesc = document.getElementById('newDesc');
-    newTitle.value="";
-    newDesc.value="";
+    newTitle.value="asa";
+    newDesc.value="sas";
 }
 
 function seltodo() {
@@ -108,37 +114,29 @@ function seltodo() {
 };
 function sendEdit(mode){document.getElementById('id01').style.display='none';}
 
-function selectAll(checkbox)
+function selectAll(checkbox) //SELECT ALL ESTA BROKEN
 {
     let selectionClass;
     switch(checkbox.id)
     {
-        case "cur_sel":selectionClass = document.getElementsByName("curTaskSel");break;
-        case "com_sel":selectionClass = document.getElementsByName("sel_CompleteTask");break;
-        case "del_sel":selectionClass = document.getElementsByName("sel_DeletedTask");
+        case "cur_sel":selectionClass = document.getElementsByName("Task_Current");break;
+        case "com_sel":selectionClass = document.getElementsByName("Task_Completed");break;
+        case "del_sel":selectionClass = document.getElementsByName("Task_Deleted");
     }
-    if(checkbox.checked){for(let i=0; i<selectionClass.length; i++){selectionClass[i].checked=true;}}
-    else{for(let i=0; i<selectionClass.length; i++){selectionClass[i].checked=false;}}
+    if(checkbox.checked)
+    {
+        for(let i=0; i<selectionClass.length; i++)
+        {
+            selectionClass[i].checked=true;
+        }
+    }
+    else
+    {
+        for(let i=0; i<selectionClass.length; i++)
+        {
+            selectionClass[i].checked=false;
+        }
+    }
 }
 
-//HTML
-//Boton papelera más abajo / Boton papelera global
-
-//CSS
-//Paleta de colores
-//Añadir fondo difuminado (o algo pa decorar)
-
-//JS
-//Boton Editar
-//Boton Seleccionar todo (current, completed & trashed)
-//Reordenar mejor botones (Seguramente se requiera css)
-//Que se guarden los archivos
-
-//PROBABLY USED IN A FUTURE ;)
-
-//x.remove();
-
-//ALL classes
-
-//taskCreatorGui (Interfaz de las barras donde va el nombre y la desc)
-//modal [Y variantes] (Todo lo relacionado con la interfaz del boton de edit))
+window.onload = loadTasks;

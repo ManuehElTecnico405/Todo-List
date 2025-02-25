@@ -1,3 +1,6 @@
+/* FALTA AÑADIR LA PALETA DE COLORES */
+/* FALTA AÑADIR ALGUN DETALLE GRAFICO COMO UN FONDO O ALGO */
+
 /* VARS */
 :root
 {
@@ -102,8 +105,7 @@ input:hover, textarea:hover{opacity: 0.8;}
 /* IDs */
 #task_name{height: 30px;}
 #task_desc{height: 80px;}
-
-#current_task_tab, #completed_task_tab, #trashed_task_tab
+#current_task_tab, #completed_task_tab, #trashed_task_tab /* AUN NO SE HAN REORDENADO LOS BOTONES DE LA TAREA */
 {
     background-color: var(--secondary_background-color);
     border: 5px, var(--secondary_border-color), solid;
