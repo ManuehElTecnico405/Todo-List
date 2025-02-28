@@ -128,7 +128,10 @@ input:hover, textarea:hover{opacity: 0.8;}
     border: 5px var(--primary_border-color) solid;
     margin-bottom: 5px;
     border-radius: 20px;
-    padding: 5px;
+    padding:5px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .textboxes
