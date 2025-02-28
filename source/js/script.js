@@ -2,6 +2,12 @@ const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
 const  TrashedTasks= document.getElementById('task_trash');
 
+let currentEdit;
+let editName = document.getElementById('newTitle');
+let editDesc = document.getElementById('newDesc');
+
+// AÑADIR Y GUARADAR TAREAS
+
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
@@ -23,7 +29,7 @@ function setTask() {
         alert("INSERTE TEXTO");
     }
     // EL GUARDADO NO ES EN TIEMPO REAL
-    // FUNCIONES COMO COMPLETAR O ELIMINAR TAREAS NO SE GUARDAN
+    // FUNCIONES COMO COMPLETAR/ELIMINAR/EDITAR TAREAS NO SE GUARDAN
 }
 
 function loadTasks(){
@@ -32,6 +38,8 @@ function loadTasks(){
         addCurrentTask(task.name, task.description);
     });
 }
+
+// AÑADIR TAREAS
 
 function addCurrentTask(name,desc) //AUN NO SE HAN REORDENADO LOS BOTONES DE LA TAREA (CSS)
 {
@@ -45,18 +53,7 @@ function addCurrentTask(name,desc) //AUN NO SE HAN REORDENADO LOS BOTONES DE LA 
         <p name="TaskDescription">${desc}</p></div>`;
 }
 
-function trashTasks(mode)
-{
-    deleteAllTasks
-    localStorage.removeItem("task")
-    let selectedTasks=[];
-    for(let i=0; i<CurrentTasks.childElementCount; i++)
-    {
-        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
-        selectedTasks.push(CurrentTasks.childNodes[i+1]);
-        console.log(CurrentTasks.childNodes[i+1].checked);
-    }
-}
+//COMPLETAR TAREAS
 
 function completeTask(x)
 {
@@ -71,6 +68,23 @@ function completeTask(x)
             CurrentTasks.appendChild(x); 
     }
 }
+
+// BORRAR TAREAS
+
+//REVISAR QUE HACER CON ESTO::
+//function trashTasks(mode)
+//{
+//    // deleteAllTasks
+//    localStorage.removeItem("task")
+//    let selectedTasks=[];
+//    for(let i=0; i<CurrentTasks.childElementCount; i++)
+//    {
+//        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+//        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+//        console.log(CurrentTasks.childNodes[i+1].checked);
+//    }
+//}
+
 
 function deleteAllTasks()
 {
@@ -87,34 +101,50 @@ function deleteTask(x)
 
 // BOTON EDITAR
 
-function editTask(x)
+function editTask(taskSelected)
 {
     document.getElementById('id01').style.display='block';
-    let curName = x.getElementsByName("TaskName");
-    let curDesc = x.getElementsByName("TaskDescription");
-    let newTitle = document.getElementById('newTitle');
-    let newDesc = document.getElementById('newDesc');
-    newTitle.value="asa";
-    newDesc.value="sas";
+    editName.value = taskSelected.querySelectorAll('[name="TaskName"]')[0].textContent;
+    editDesc.value = taskSelected.querySelectorAll('[name="TaskDescription"]')[0].textContent;
+    
+    currentEdit=taskSelected;
 }
 
-function seltodo() {
-    let selected = true;
-    const btnSeleccionar = document.getElementById("task_current");
-    if (selected) {
-        checkboxes.forEach(function(checkbox) {
-        checkbox.checked = true;
-    });
-        btnSeleccionar.value = "Deseleccionar";
-      } else {
-        checkboxes.forEach(function(checkbox) {checkbox.checked = false;});
-        btnSeleccionar.value = "Seleccionar";
+function sendEdit(mode)
+{
+    document.getElementById('id01').style.display='none';
+    if(mode=='CONFIRM')
+    {
+        let nameVerificator=currentEdit.querySelectorAll('[name="TaskName"]')[0];
+        let descVerificator=currentEdit.querySelectorAll('[name="TaskDescription"]')[0];
+        if(editName.value==nameVerificator.textContent && editDesc.value==descVerificator.textContent)
+        {alert("NO SE HA REALIZADO NINGUN CAMBIO!");}
+        else
+        {
+            nameVerificator.innerHTML=editName.value;
+            descVerificator.innerHTML=editDesc.value;
+        }
     }
-    selected = false;
-};
-function sendEdit(mode){document.getElementById('id01').style.display='none';}
+}
 
-function selectAll(checkbox) //SELECT ALL ESTA BROKEN
+//function seltodo() {
+//    let selected = true;
+//    const btnSeleccionar = document.getElementById("task_current");
+//    if (selected) {
+//        checkboxes.forEach(function(checkbox) {
+//        checkbox.checked = true;
+//    });
+//        btnSeleccionar.value = "Deseleccionar";
+//      } else {
+//        checkboxes.forEach(function(checkbox) {checkbox.checked = false;});
+//        btnSeleccionar.value = "Seleccionar";
+//    }
+//    selected = false;
+//};
+
+// SELECT ALL
+
+function selectAll(checkbox)
 {
     let selectionClass;
     switch(checkbox.id)
