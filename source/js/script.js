@@ -32,6 +32,19 @@ function setTask() {
     // FUNCIONES COMO COMPLETAR/ELIMINAR/EDITAR TAREAS NO SE GUARDAN
 }
 
+function trashTasks(mode)
+{
+    deleteAllTasks
+    localStorage.clear();
+    let selectedTasks=[];
+    for(let i=0; i<CurrentTasks.childElementCount; i++)
+    {
+        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+        console.log(CurrentTasks.childNodes[i+1].checked);
+    }
+}
+
 function loadTasks(){
     let task = JSON.parse(localStorage.getItem("tasks")) || [];
     task.forEach(task =>{
@@ -54,7 +67,6 @@ function addCurrentTask(name,desc) //AUN NO SE HAN REORDENADO LOS BOTONES DE LA 
 }
 
 //COMPLETAR TAREAS
-
 function completeTask(x)
 {
     switch(x.classList[1])

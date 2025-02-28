@@ -11,28 +11,28 @@
             <label>
                 <input type="button" class="buttonStyle SendButton" onclick="setTask()">
                 <div class="textboxes">
-                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="test">
+                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="">
                     <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
                 </div>
             </label>
         </header>
         <article>
             <div id="current_task_tab">
-                <h2>ACTUALES</h2>
+                <h3>ACTUALES</h3>
                 <label>SELECT ALL</label>
                 <input type="checkbox" id="cur_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_current"></div>
             </div>
             <br>
             <div id="completed_task_tab">
-                <h2>COMPLETADAS</h2>
+                <h3>COMPLETADAS</h3>
                 </label>SELECT ALL</label>
                 <input type="checkbox" id="com_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_complete"></div>
             </div>
             <br>
             <div id="trashed_task_tab">
-                <h2>PAPELERA</h2>
+                <h3>PAPELERA</h3>
                 </label>SELECT ALL</label>
                 <input type="checkbox" id="del_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_trash"></div>

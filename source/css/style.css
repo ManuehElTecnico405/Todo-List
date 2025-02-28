@@ -4,10 +4,10 @@
 /* VARS */
 :root
 {
-    --primary_background-color: rgb(20,20,120);
-    --secondary_background-color: rgb(80,20,120);
-    --primary_border-color: rgb(20,20,80);
-    --secondary_border-color: rgb(60,20,80);
+    --primary_background-color: hsl(233, 35%, 29%);
+    --secondary_background-color: rgb(68, 32, 103);
+    --primary_border-color: rgb(37, 37, 68);
+    --secondary_border-color: rgb(43, 17, 56);
     --primary_text-color: rgb(230,230,230);
     --secondary_text-color: rgb(255, 255, 255);
 
@@ -18,10 +18,40 @@
 /* GLOBAL */
 *{font-family: 'Courier New', Courier, monospace;}
 html{background-color: var(--background-color);}
+
+h3 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: italic;
+  }
+
+p {
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+label {
+    font-family: "Atkinson Hyperlegible Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal; 
+}
+
+
+h2 {
+
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
 body
 {
-    background-color: var(--primary_background-color);
-    border: 10px var(--primary_border-color) solid;
+    /*background-color: var(--primary_background-color);
+    border: 10px var(--primary_border-color) solid;*/
     color:var(--primary_text-color);
     margin: 20px;
     font-size: 15px;
@@ -29,14 +59,16 @@ body
     box-sizing: border-box;
     text-align: left;
     text-indent: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
 /*  border: 10px rgb(5,5,60) solid; background: rgb(48,70,50); background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
 
 header
 {
-    background-color: var(--secondary_background-color);
+    /*background-color: var(--secondary_background-color);
     border: 5px var(--secondary_border-color) solid;
-    margin-top: 0%;
+    margin-top: 0%;*/
     padding-bottom: 20px;
     text-align: center;
 }
@@ -48,6 +80,7 @@ h1
     margin-top: 11px;
     text-decoration: underline;
 }
+
 textarea{resize: none;}
 input:hover, textarea:hover{opacity: 0.8;}
 
@@ -55,10 +88,17 @@ input:hover, textarea:hover{opacity: 0.8;}
 .container {padding: 16px;}
 .SendButton{background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');}
 .Task_CompleteButton{background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');}
+.Task_CompleteButton:hover{background-image: url('../../img/check_verde.png');}
 .Task_EditButton{background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');}
-.Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');}
+.Task_EditButton:hover{background-image: url('../../img/lapiz_movido.png');}
+.Task_TrashButton{background-image: url('../../img/trash_closed_transparent.png');}
+.Task_TrashButton:hover{background-image: url('../../img/trash_open_transparent.png');}
 .Task_Current{opacity: 1;}
 .Task_Complete{opacity: 0.5;}
+
+/* BASURA ANTERIOR IMG
+.Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');} 
+*/
 
 .buttonStyle
 {
@@ -85,7 +125,7 @@ input:hover, textarea:hover{opacity: 0.8;}
     background-color: var(--primary_background-color);
     border: 5px var(--primary_border-color) solid;
     margin-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 5px;
 }
 
@@ -109,10 +149,11 @@ input:hover, textarea:hover{opacity: 0.8;}
 {
     background-color: var(--secondary_background-color);
     border: 5px, var(--secondary_border-color), solid;
+    border-radius: 10px;
     padding-bottom: 60px;
     margin: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 .task p {
     word-wrap: break-word;
