@@ -4,8 +4,8 @@
 /* VARS */
 :root
 {
-    --primary_background-color: hsl(233, 35%, 29%);
-    --secondary_background-color: rgb(68, 32, 103);
+    --primary_background-color: rgb(48, 54, 99);
+    --secondary_background-color: rgb(70, 46, 105);
     --primary_border-color: rgb(37, 37, 68);
     --secondary_border-color: rgb(43, 17, 56);
     --primary_text-color: rgb(230,230,230);
@@ -53,14 +53,16 @@ body
     /*background-color: var(--primary_background-color);
     border: 10px var(--primary_border-color) solid;*/
     color:var(--primary_text-color);
-    margin: 20px;
+    /*margin: 20px;*/
     font-size: 15px;
-    border-radius: 2px;
+    border-radius: 5px;
     box-sizing: border-box;
     text-align: left;
     text-indent: 1em;
     padding-left: 4em;
     padding-right: 4em;
+    padding-top: 1em;
+    background: linear-gradient(180deg, var(--primary_background-color), var(--background-color));
 /*  border: 10px rgb(5,5,60) solid; background: rgb(48,70,50); background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
 
