@@ -1,55 +1,71 @@
 const  CurrentTasks = document.getElementById('task_current');
 const  CompletedTasks= document.getElementById('task_complete');
-const  TrashedTasks= document.getElementById('task_trash');
 
 let currentEdit;
 let editName = document.getElementById('newTitle');
 let editDesc = document.getElementById('newDesc');
 
+let cacheCurrentTasks = JSON.parse(localStorage.getItem("current_tasks")) || [];
+let cacheCompletedTasks = JSON.parse(localStorage.getItem("completed_tasks")) || [];
+
 // AÑADIR Y GUARADAR TAREAS
+    // FUNCIONES COMO COMPLETAR/ELIMINAR/EDITAR TAREAS NO SE GUARDAN
 
 function setTask() {
     let taskName = document.getElementById("task_name").value;
     let taskDesc = document.getElementById("task_desc").value;
-    // let cacheTask = {name: taskName, description: taskDesc};
 
     if(taskName.length>0)
     {
         if(taskDesc.length<=0){taskDesc="No Description";}
-        addCurrentTask(taskName,taskDesc);
-        let newTask = { name: taskName, description: taskDesc };
-        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        tasks.push(newTask);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
         document.getElementById("task_name").value = "";
         document.getElementById("task_desc").value = "";
+        addCurrentTask(taskName,taskDesc);
+
+        pushCache(taskName, taskDesc);
     }
-    else
-    {
-        alert("INSERTE TEXTO");
-    }
-    // EL GUARDADO NO ES EN TIEMPO REAL
-    // FUNCIONES COMO COMPLETAR/ELIMINAR/EDITAR TAREAS NO SE GUARDAN
+    else{alert("INSERTE TEXTO");}
 }
 
-function trashTasks(mode)
+// GUARDAR EN CACHE
+
+function pushCache(savedTaskName, savedDescName)
 {
-    deleteAllTasks
-    localStorage.clear();
-    let selectedTasks=[];
-    for(let i=0; i<CurrentTasks.childElementCount; i++)
-    {
-        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
-        selectedTasks.push(CurrentTasks.childNodes[i+1]);
-        console.log(CurrentTasks.childNodes[i+1].checked);
-    }
+    let newTask = { name: savedTaskName, description: savedDescName };
+    cacheCurrentTasks.push(newTask);
+    saveCache();
 }
 
-function loadTasks(){
-    let task = JSON.parse(localStorage.getItem("tasks")) || [];
-    task.forEach(task =>{
-        addCurrentTask(task.name, task.description);
+function saveCache()
+{
+    localStorage.setItem("current_tasks", JSON.stringify(cacheCurrentTasks));
+}
+
+function loadCache()
+{
+    cacheCurrentTasks.forEach(cacheCurrentTasks =>{
+        addCurrentTask(cacheCurrentTasks.name, cacheCurrentTasks.description);
     });
+}
+
+// REMOVE
+function readCache()
+{
+    console.log(cacheCurrentTasks[0]);
+}
+
+function taskCacheFilter(selectedTask)
+{
+    zone=CurrentTasks;
+    let dummy = 0;
+    let found = false;
+    while(dummy < CurrentTasks.childElementCount && !found)
+    {
+        if(CurrentTasks.children[dummy]==selectedTask){found=true;}
+        else{dummy++;}
+    }
+
+    return dummy;
 }
 
 // AÑADIR TAREAS
@@ -83,21 +99,6 @@ function completeTask(x)
 
 // BORRAR TAREAS
 
-//REVISAR QUE HACER CON ESTO::
-//function trashTasks(mode)
-//{
-//    // deleteAllTasks
-//    localStorage.removeItem("task")
-//    let selectedTasks=[];
-//    for(let i=0; i<CurrentTasks.childElementCount; i++)
-//    {
-//        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
-//        selectedTasks.push(CurrentTasks.childNodes[i+1]);
-//        console.log(CurrentTasks.childNodes[i+1].checked);
-//    }
-//}
-
-
 function deleteAllTasks()
 {
     CurrentTasks.innerHTML = "";
@@ -105,9 +106,10 @@ function deleteAllTasks()
     deleteAllTasks.innerHTML = "";
 }
 
-function deleteTask(x)
+function deleteTask(x) //FALTA ACABAR
 {
-    localStorage.removeItem("tasks", x);
+    localStorage.removeItem(cacheCurrentTasks[taskCacheFilter(x)]);
+    console.log(cacheCurrentTasks[taskCacheFilter(x)]);
     x.remove();
 }
 
@@ -162,8 +164,7 @@ function selectAll(checkbox)
     switch(checkbox.id)
     {
         case "cur_sel":selectionClass = document.getElementsByName("Task_Current");break;
-        case "com_sel":selectionClass = document.getElementsByName("Task_Completed");break;
-        case "del_sel":selectionClass = document.getElementsByName("Task_Deleted");
+        case "com_sel":selectionClass = document.getElementsByName("Task_Completed");
     }
     if(checkbox.checked)
     {
@@ -181,4 +182,17 @@ function selectAll(checkbox)
     }
 }
 
-window.onload = loadTasks;
+window.onload = loadCache;
+
+//PROBABLY REMOVED
+
+//function trashTasks(mode)
+//{
+//    let selectedTasks=[];
+//    for(let i=0; i<CurrentTasks.childElementCount; i++)
+//    {
+//        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+//        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+//        console.log(CurrentTasks.childNodes[i+1].checked);
+//    }
+//}

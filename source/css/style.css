@@ -151,7 +151,7 @@ input:hover, textarea:hover{opacity: 0.8;}
 /* IDs */
 #task_name{height: 30px;}
 #task_desc{height: 80px;}
-#current_task_tab, #completed_task_tab, #trashed_task_tab /* AUN NO SE HAN REORDENADO LOS BOTONES DE LA TAREA */
+#current_task_tab, #completed_task_tab /* AUN NO SE HAN REORDENADO LOS BOTONES DE LA TAREA */
 {
     background-color: var(--secondary_background-color);
     border: 5px, var(--secondary_border-color), solid;
@@ -219,6 +219,3 @@ input:hover, textarea:hover{opacity: 0.8;}
 .animate{-webkit-animation: animatezoom 0.6s;animation: animatezoom 0.6s;}
 @-webkit-keyframes animatezoom{from{-webkit-transform: scale(0)}to{-webkit-transform: scale(1)}}
 @keyframes animatezoom{from{transform: scale(0)}to{transform: scale(1)}}
-
-
-/* #current_task_tab > h2, #completed_task_tab > h2, #trashed_task_tab > h2{background-color: var(--secondary_background-color);border: 5px, var(--secondary_border-color), solid;} */
