@@ -7,6 +7,7 @@
     </head>
     <body>
         <header>
+            <button id="fuckingButton" onclick="readCache()"></button>
             <h1>TO-DO LIST</h1>
             <label>
                 <input type="button" class="buttonStyle SendButton" onclick="setTask()">
@@ -29,13 +30,6 @@
                 </label>SELECT ALL</label>
                 <input type="checkbox" id="com_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_complete"></div>
-            </div>
-            <br>
-            <div id="trashed_task_tab">
-                <h3>PAPELERA</h3>
-                </label>SELECT ALL</label>
-                <input type="checkbox" id="del_sel" name="selector" onchange="selectAll(this)">
-                <div id="task_trash"></div>
             </div>
         </article>
         <div id="id01" class="modal">
