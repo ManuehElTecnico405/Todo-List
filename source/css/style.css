@@ -156,6 +156,7 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin: 5px;
     padding-left: 2em;
     padding-right: 2em;
+    background: linear-gradient(180deg, var(--secondary_background-color), var(--secondary_border-color));
 }
 .task p {
     word-wrap: break-word;
