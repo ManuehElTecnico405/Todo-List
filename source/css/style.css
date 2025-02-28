@@ -156,6 +156,7 @@ input:hover, textarea:hover{opacity: 0.8;}
     border: 5px, var(--secondary_border-color), solid;
     border-radius: 10px;
     padding-bottom: 60px;
+    padding-top: 10px;
     margin: 5px;
     padding-left: 2em;
     padding-right: 2em;
