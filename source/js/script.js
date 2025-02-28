@@ -26,6 +26,19 @@ function setTask() {
     }
 }
 
+function trashTasks(mode)
+{
+    deleteAllTasks
+    localStorage.clear();
+    let selectedTasks=[];
+    for(let i=0; i<CurrentTasks.childElementCount; i++)
+    {
+        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
+        selectedTasks.push(CurrentTasks.childNodes[i+1]);
+        console.log(CurrentTasks.childNodes[i+1].checked);
+    }
+}
+
 function loadTasks(){
     let task = JSON.parse(localStorage.getItem("tasks")) || [];
     task.forEach(task =>{
@@ -43,19 +56,6 @@ function addCurrentTask(name,desc)
         <input type="button" class="buttonStyle Task_TrashButton" onclick="trashTasks('CURRENT')">
         <h2 name="TaskName">${name}</h2>
         <p name="TaskDescription">${desc}</p></div>`;
-}
-
-function trashTasks(mode)
-{
-    deleteAllTasks
-    localStorage.removeItem("task")
-    let selectedTasks=[];
-    for(let i=0; i<CurrentTasks.childElementCount; i++)
-    {
-        if (CurrentTasks.childNodes[i+1].querySelector("select_task").checked){}
-        selectedTasks.push(CurrentTasks.childNodes[i+1]);
-        console.log(CurrentTasks.childNodes[i+1].checked);
-    }
 }
 
 function completeTask(x)

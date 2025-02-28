@@ -23,7 +23,7 @@ h3 {
     font-style: italic;
   }
 
-  p {
+p {
     font-family: "Playwrite IT Moderna", serif;
     font-optical-sizing: auto;
     font-weight: weight;
@@ -34,6 +34,15 @@ label {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal; 
+}
+
+
+h2 {
+
+    font-family: "Playwrite IT Moderna", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 body
