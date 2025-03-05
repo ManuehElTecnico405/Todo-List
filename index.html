@@ -7,8 +7,11 @@
     </head>
     <body>
         <header>
-            <button id="fuckingButton" onclick="readCache()"></button>
+            <p>TO-DO_LIST</p>
+        </header>
+        <div id="InputsZone">
             <h1>TO-DO LIST</h1>
+            <p>[SAMPLE TEXT]</p>
             <label>
                 <input type="button" class="buttonStyle SendButton" onclick="setTask()">
                 <div class="textboxes">
@@ -16,19 +19,15 @@
                     <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
                 </div>
             </label>
-        </header>
+        </div>
         <article>
             <div id="current_task_tab">
                 <h3>ACTUALES</h3>
-                <label>SELECT ALL</label>
-                <input type="checkbox" id="cur_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_current"></div>
             </div>
             <br>
             <div id="completed_task_tab">
                 <h3>COMPLETADAS</h3>
-                </label>SELECT ALL</label>
-                <input type="checkbox" id="com_sel" name="selector" onchange="selectAll(this)">
                 <div id="task_complete"></div>
             </div>
         </article>
@@ -44,7 +43,9 @@
                 </div>
             </div>
           </div>          
-        <footer></footer>
+        <footer>
+            <p>TO-DO_LIST</p>
+        </footer>
         <script src="./source/js/script.js"></script>
     </body>
 </html>
