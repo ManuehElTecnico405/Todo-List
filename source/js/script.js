@@ -158,6 +158,16 @@ function sendEdit(mode)
 
 // SELECT ALL
 
+function selectAll(Source) {
+    let contId = (Source.id === 'cur_sel') ? 'task_current' : 'task_complete';
+    let checkboxes = document.getElementById(contId).getElementsByClassName('selectTask');
+
+    for (let i = 0; i < checkboxes.length; i++ ){
+        checkboxes[i].checked = Source.checked;
+    }
+}
+
+/* 
 function selectAll(checkbox)
 {
     let selectionClass;
@@ -181,6 +191,7 @@ function selectAll(checkbox)
         }
     }
 }
+    */
 
 window.onload = loadCache;
 
