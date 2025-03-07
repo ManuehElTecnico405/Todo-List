@@ -15,8 +15,8 @@
             <label>
                 <input type="button" class="buttonStyle SendButton" onclick="setTask()">
                 <div class="textboxes">
-                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="">
-                    <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción"></textarea>
+                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="" onfocus="noEnviar(event)">
+                    <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción" onfocus="noEnviar(event)"></textarea>
                 </div>
             </label>
         </div>

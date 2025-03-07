@@ -10,11 +10,14 @@ let cacheCurrentTasks = JSON.parse(localStorage.getItem("current_tasks")) || [];
 function saveCache(){localStorage.setItem("current_tasks", JSON.stringify(cacheCurrentTasks));}
 function loadCache(){cacheCurrentTasks.forEach(task => {addCurrentTask(task);});}
 
+function noEnviar(event){
+    event.preventDefault();
+    event.stopPropagation();
+}
 function setTask() // ENVIAR TAREAS
 {
     let taskName = document.getElementById("task_name");
     let taskDesc = document.getElementById("task_desc");
-
     if(taskName.value.length>0) // DETECTA SI HAY TITULO O NO
     {
         if(taskDesc.value.length<=0){taskDesc.value="No Description";} // EN EL CASO DE NO TENER DESCRIPCION, SE LE APLICARA ESTA.

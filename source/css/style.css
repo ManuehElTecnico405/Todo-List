@@ -106,18 +106,45 @@ h1
 
 textarea{resize: none;}
 input:hover, textarea:hover{opacity: 0.8;}
+.textboxes
 
 /* CLASSES */
 .container {padding: 16px;}
-.SendButton{background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');}
-.Task_CompleteButton{background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');}
-.Task_CompleteButton:hover{background-image: url('../../img/check_verde.png');}
-.Task_EditButton{background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');}
-.Task_EditButton:hover{background-image: url('../../img/lapiz_movido.png');}
-.Task_TrashButton{background-image: url('../../img/trash_closed_transparent.png');}
-.Task_TrashButton:hover{background-image: url('../../img/trash_open_transparent.png');}
+.SendButton{background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
+    align-self: flex-start;
+    margin: 0;
+}
+/* .Task_CompleteButton{background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
+    background-color: rgb(127, 196, 127);}
+.Task_CompleteButton:hover{background-image: url('../../img/check_verde.png');
+    background-color: rgb(172, 212, 172);} */
+.Task_EditButton{background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');
+    background-color: rgb(205, 192, 106);}
+.Task_EditButton:hover{background-image: url('../../img/lapiz_movido.png');
+    background-color: rgb(205, 192, 106);}
+.Task_TrashButton{background-image: url('../../img/trash_closed_transparent.png');
+    background-color: rgb(188, 113, 113);}
+.Task_TrashButton:hover{background-image: url('../../img/trash_open_transparent.png');
+    background-color: rgb(188, 113, 113);}
 .Task_Current{opacity: 1;}
 .Task_Complete{opacity: 0.5;}
+
+.Task_Complete .Task_CompleteButton {
+    background-image: url('../../img/cruz.png');
+    background-color: rgb(127, 196, 127);
+} 
+.Task_Complete .Task_CompleteButton:hover {
+    background-image: url('../../img/cruz.png');
+    background-color: rgb(172, 212, 172);
+}
+.Task_Current .Task_CompleteButton{
+    background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
+    background-color: rgb(127, 196, 127);
+}
+.Task_Current .Task_CompleteButton:hover{
+    background-image: url('../../img/check_verde.png');
+    background-color: rgb(172, 212, 172);
+}
 
 /* BASURA ANTERIOR IMG
 .Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');} 
@@ -133,6 +160,17 @@ input:hover, textarea:hover{opacity: 0.8;}
     border-radius: 3px;
     cursor: pointer;
     /* border-radius: 30px; */
+}
+
+/* ESTO ES UNA PRUEBA*/
+.input-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
 }
 
 .selectTask
@@ -158,7 +196,7 @@ input:hover, textarea:hover{opacity: 0.8;}
 .textboxes
 {
     display: inline-grid;
-    margin: auto;
+    margin: 5px 0;
 }
 .textboxes_input
 {
@@ -167,6 +205,7 @@ input:hover, textarea:hover{opacity: 0.8;}
     height: 30px;
     padding: 2px;
     margin-top: 5px;
+    margin: 5px 0;  
 }
 /* IDs */
 #task_name{height: 30px;}
