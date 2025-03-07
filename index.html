@@ -7,18 +7,17 @@
     </head>
     <body>
         <header>
+            <img src="./img/favicon.png" width="40" height="40">
             <p>TO-DO_LIST</p>
         </header>
         <div id="InputsZone">
             <h1>TO-DO LIST</h1>
             <p>[SAMPLE TEXT]</p>
-            <label>
-                <input type="button" class="buttonStyle SendButton" onclick="setTask()">
-                <div class="textboxes">
-                    <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="" onfocus="noEnviar(event)">
-                    <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción" onfocus="noEnviar(event)"></textarea>
-                </div>
-            </label>
+            <input type="button" class="buttonStyle SendButton" onclick="setTask()">
+            <div class="textboxes">
+                <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="" maxlength="60" onfocus="noEnviar(event)">
+                <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción" onfocus="noEnviar(event)"></textarea>
+            </div>
         </div>
         <article>
             <div id="current_task_tab">
@@ -45,6 +44,7 @@
           </div>          
         <footer>
             <p>TO-DO_LIST</p>
+            <p>COPYRIGHT: NSQ NSC</p>
         </footer>
         <script src="./source/js/script.js"></script>
     </body>

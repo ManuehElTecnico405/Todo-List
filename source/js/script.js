@@ -43,10 +43,11 @@ function addCurrentTask(task) // AÑADIR TAREAS
     const taskElement = document.createElement('div');
     taskElement.className = `task ${task.status}`;
     taskElement.setAttribute('data-id', task.id); // SE LE AÑADEN LAS CLASES DE ESTA FORMA PARA SIMPLIFICAR EL USO DE LA CACHE
-    taskElement.innerHTML+=`<input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode)">
-        <input type="button" class="buttonStyle Task_EditButton" onclick="editTask(this.parentNode)">
-        <input type="button" class="buttonStyle Task_TrashButton" onclick="deleteTask(this.parentNode)">
-        <h2 name="TaskName">${task.name}</h2><p name="TaskDescription">${task.description}</p>`;
+    taskElement.innerHTML+=`<label><input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode.parentNode)">
+        <input type="button" class="buttonStyle Task_EditButton" onclick="editTask(this.parentNode.parentNode)">
+        <input type="button" class="buttonStyle Task_TrashButton" onclick="deleteTask(this.parentNode.parentNode)">
+        </label><h2 name="TaskName">${task.name}</h2><hr>
+        <p name="TaskDescription">${task.description}</p>`;
     
     if (task.status==="Task_Current") // ENVIA LA TAREA DEPENDIENDO DE SU ESTADO
     {
@@ -132,16 +133,6 @@ window.onload = loadCache; // CARGA LA CACHE AL INICIAR
 
 // BUGS:
 // #3: Se puede meter codigo en los apartados
-
-// POSIBLE IDEA:
-// TASK DISPLACEMENT
-//document.addEventListener(
-
-// COSAS PENDIENTES:
-// BOTON HTML BUG
-// X EN EL CHECK DEL CSS
-// LABEL
-
 
 //SELECT ALL (UNUSED)
 //function selectAll(Source) {let contId = (Source.id === 'cur_sel') ? 'task_current' : 'task_complete';let checkboxes = document.getElementById(contId).getElementsByClassName('selectTask');for (let i = 0; i < checkboxes.length; i++ ){checkboxes[i].checked = Source.checked;}}
