@@ -28,10 +28,12 @@ h3 {
 
 p {
     font-family: "Playwrite IT Moderna", serif;
+    font-size: medium;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
   }
+
 label {
     font-family: "Atkinson Hyperlegible Mono", serif;
     font-optical-sizing: auto;
@@ -73,6 +75,7 @@ footer
     background-color: var(--primary_background-color);
     margin-top: 60px;
     padding-bottom: 0%;
+    border-radius: 10px;
 }
 
 #InputsZone
@@ -87,7 +90,7 @@ header
 {
     border: 5px var(--primary_border-color) solid;
     background-color: var(--secondary_background-color);
-    border-radius: 20px;
+    border-radius: 10px;
     /* position: fixed; */
     /* left:auto; */
 
