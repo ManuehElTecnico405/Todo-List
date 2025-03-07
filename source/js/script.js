@@ -11,6 +11,11 @@ let cacheCompletedTasks = JSON.parse(localStorage.getItem("completed_tasks")) ||
 function saveCache(){localStorage.setItem("current_tasks", JSON.stringify(cacheCurrentTasks));}
 function loadCache(){cacheCurrentTasks.forEach(task => {addCurrentTask(task);});}
 
+
+ //   event.preventDefault();
+ //   event.stopPropagation();
+
+
 //AÑADIR TAREAS
 function setTask() {
     let taskName = document.getElementById("task_name").value;
