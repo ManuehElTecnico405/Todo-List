@@ -134,7 +134,8 @@ window.onload = loadCache; // CARGA LA CACHE AL INICIAR
 
 // POSIBLE IDEA:
 // TASK DISPLACEMENT
-//document.addEventListener()
+//document.addEventListener(
+
 
 
 
