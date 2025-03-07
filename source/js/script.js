@@ -107,7 +107,7 @@ function sendEdit(mode) // ENVIAR EDICION
         }
         else if(editName.value.length<=0) // VERIFICA SI EL TITULO TIENE TEXTO U NO
         {
-            alert("LA TAREA NO TIENE NOMBRE");
+            alert("LA TAREA NO TIENE TITULO");
         }
         else
         {
