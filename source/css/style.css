@@ -63,7 +63,7 @@ footer
 textarea{resize: none;}
 input:hover, textarea:hover{opacity: 0.8;}
 
-/* SSQ */
+/* CREATE TASK ZONE */
 .textboxes
 {
     display: inline-grid;
@@ -71,7 +71,6 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin-left: 5px;
     margin-right: 5px;
 }
-/* SSQ */
 .textboxes_input
 {
     color:var(--input_text-color);
@@ -81,6 +80,44 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin-top: 5px;
     margin: 5px 0;  
 }
+.SendButton
+{
+    background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
+    align-self: flex-start;
+    margin: 0;
+}
+
+/* TASKS */
+.task
+{
+    background-color: var(--primary_background-color);
+    border: 5px var(--primary_border-color) solid;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding:5px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.task h2
+{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin-bottom: 0%;
+    text-indent: 0px;
+}
+.task p
+{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    margin: 10px;
+    text-indent: 0px;
+}
+.task label{float: right;}
+.Task_Current{opacity: 1;}
+.Task_Complete{opacity: 0.5;}
 
 /* BUTTONS */
 .buttonStyle
@@ -93,12 +130,6 @@ input:hover, textarea:hover{opacity: 0.8;}
     border-radius: 3px;
     cursor: pointer;
 }
-
-/* TASKS */
-.Task_Current{opacity: 1;}
-.Task_Complete{opacity: 0.5;}
-
-/* BUTTONS */
 .editButton
 {
     background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');
@@ -109,26 +140,19 @@ input:hover, textarea:hover{opacity: 0.8;}
     background-image: url('../../img/trash_closed_transparent.png');
     background-color: rgb(188, 113, 113);
 }
-.SendButton
-{
-    background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
-    align-self: flex-start;
-    margin: 0;
-}
-
 .editButton:hover{background-image: url('../../img/lapiz_movido.png');}
 .deleteButton:hover{background-image: url('../../img/trash_open_transparent.png');}
-.completeButton
+.Task_Current .completeButton
 {
     background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
     background-color: rgb(127, 196, 127);
 }
-.uncompleteButton
+.Task_Complete .completeButton
 {
     background-image: url('../../img/cruz.png');
     background-color: rgb(188, 113, 113);
 }
-.completeButton:hover{background-image: url('../../img/check_verde.png');}
+.Task_Current .completeButton:hover{background-image: url('../../img/check_verde.png');}
 
 /* EDIT BUTTON GUI */
 .container
@@ -210,35 +234,6 @@ input:hover, textarea:hover{opacity: 0.8;}
 @keyframes animatezoom{from{transform: scale(0)}to{transform: scale(1)}}
 
 
-.task label{float: right;}
-
-.task h2
-{
-    margin-bottom: 0%;
-    text-indent: 0px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: pre-line;
-}
-.task p
-{
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: pre-line;
-    margin: 10px;
-    text-indent: 0px;
-}
-.task
-{
-    background-color: var(--primary_background-color);
-    border: 5px var(--primary_border-color) solid;
-    margin-bottom: 5px;
-    border-radius: 20px;
-    padding:5px;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
 /* ESTO ES UNA PRUEBA*/
 .input-button-container {
     display: flex;
