@@ -61,19 +61,39 @@ body
     text-indent: 1em;
     padding-left: 4em;
     padding-right: 4em;
-    padding-top: 1em;
-    padding-bottom: 3em;
+    padding-top: 0%;
+    padding-bottom: 0%;
     background: linear-gradient(180deg, var(--primary_background-color), var(--background-color));
 /*  border: 10px rgb(5,5,60) solid; background: rgb(48,70,50); background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
 
+footer
+{
+    border: 5px var(--primary_border-color) solid;
+    background-color: var(--primary_background-color);
+    margin-top: 60px;
+    padding-bottom: 0%;
+}
+
+#InputsZone
+{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* .task label{border: 2px red solid;} */
+
 header
 {
+    border: 5px var(--primary_border-color) solid;
+    background-color: var(--secondary_background-color);
+    border-radius: 20px;
+    /* position: fixed; */
+    /* left:auto; */
+
     /*background-color: var(--secondary_background-color);
     border: 5px var(--secondary_border-color) solid;
     margin-top: 0%;*/
-    padding-bottom: 20px;
-    text-align: center;
 }
 h1
 {
