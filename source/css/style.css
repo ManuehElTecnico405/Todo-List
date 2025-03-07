@@ -7,52 +7,20 @@
     --secondary_border-color: rgb(43, 17, 56);
     --primary_text-color: rgb(230,230,230);
     --secondary_text-color: rgb(255, 255, 255);
-
     --input_text-color: rgb(0,0,0);
     --background-color: rgb(0,0,0);
 }
 
 /* GLOBAL */
-*{font-family: 'Courier New', Courier, monospace;}
-html{background-color: var(--background-color);}
-
-h3 {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal; 
-  }
-
-p {
-    font-family: "Playwrite IT Moderna", serif;
-    font-size: medium;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  }
-
-label {
-    font-family: "Atkinson Hyperlegible Mono", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal; 
-}
-
-
-h2
+*
 {
-    font-family: "Playwrite IT Moderna", serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
 }
-
+html{color: var(--primary_text-color);}
 body
 {
-    /*background-color: var(--primary_background-color);
-    border: 10px var(--primary_border-color) solid;*/
-    color:var(--primary_text-color);
-    /*margin: 20px;*/
+    background: linear-gradient(180deg, var(--primary_background-color), var(--background-color));
     font-size: 15px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -62,29 +30,7 @@ body
     padding-right: 4em;
     padding-top: 0%;
     padding-bottom: 0%;
-    margin-bottom: 0%;
-    background: linear-gradient(180deg, var(--primary_background-color), var(--background-color));
-/*  border: 10px rgb(5,5,60) solid; background: rgb(48,70,50); background: linear-gradient(0deg, rgb(27, 38, 40) 0%, rgb(77, 82, 146) 100%); */
 }
-
-footer
-{
-    border: 5px var(--primary_border-color) solid;
-    background-color: var(--primary_background-color);
-    margin-top: 60px;
-    color:gray;
-    text-align: center;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-    border-radius: 10px;
-}
-
-#InputsZone
-{
-    padding-bottom: 20px;
-    text-align: center;
-}
-
 header
 {
     border: 5px var(--primary_border-color) solid;
@@ -92,99 +38,32 @@ header
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    /* position: fixed; */
-    /* left:auto; */
-
-    /*background-color: var(--secondary_background-color);
-    border: 5px var(--secondary_border-color) solid;
-    margin-top: 0%;*/
 }
 h1
 {
-    color: var(--secondary_text-color);
+    /* color: var(--secondary_text-color); */
     font-weight: bold;
+    text-decoration: underline;
     font-size: 3em;
     margin-top: 11px;
-    text-decoration: underline;
 }
+/* SSQ */
+footer
+{
+    border: 5px var(--primary_border-color) solid;
+    background-color: var(--primary_background-color);
+    color:var(--secondary_text-color);
 
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    border-radius: 10px;
+}
 textarea{resize: none;}
 input:hover, textarea:hover{opacity: 0.8;}
-.textboxes
 
-/* CLASSES */
-.container {padding: 16px;}
-.SendButton{background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
-    align-self: flex-start;
-    margin: 0;
-}
-/* .Task_CompleteButton{background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
-    background-color: rgb(127, 196, 127);}
-.Task_CompleteButton:hover{background-image: url('../../img/check_verde.png');
-    background-color: rgb(172, 212, 172);} */
-.Task_EditButton{background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');
-    background-color: rgb(205, 192, 106);}
-.Task_EditButton:hover{background-image: url('../../img/lapiz_movido.png');
-    background-color: rgb(205, 192, 106);}
-.Task_TrashButton{background-image: url('../../img/trash_closed_transparent.png');
-    background-color: rgb(188, 113, 113);}
-.Task_TrashButton:hover{background-image: url('../../img/trash_open_transparent.png');
-    background-color: rgb(188, 113, 113);}
-.Task_Current{opacity: 1;}
-.Task_Complete{opacity: 0.5;}
-
-.Task_Complete .Task_CompleteButton {
-    background-image: url('../../img/cruz.png');
-    background-color: rgb(127, 196, 127);
-} 
-.Task_Complete .Task_CompleteButton:hover {
-    background-image: url('../../img/cruz.png');
-    background-color: rgb(172, 212, 172);
-}
-.Task_Current .Task_CompleteButton{
-    background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
-    background-color: rgb(127, 196, 127);
-}
-.Task_Current .Task_CompleteButton:hover{
-    background-image: url('../../img/check_verde.png');
-    background-color: rgb(172, 212, 172);
-}
-
-/* BASURA ANTERIOR IMG
-.Task_TrashButton{background-image: url('https://icon-library.com/images/trash-icon-vector/trash-icon-vector-19.jpg');} 
-*/
-
-.buttonStyle
-{
-    background-size: 18px 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 3px;
-    cursor: pointer;
-    /* border-radius: 30px; */
-}
-
-/* ESTO ES UNA PRUEBA*/
-.input-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
-}
-
-.selectTask
-{
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
+/* SSQ */
 .textboxes
 {
     display: inline-grid;
@@ -192,6 +71,7 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin-left: 5px;
     margin-right: 5px;
 }
+/* SSQ */
 .textboxes_input
 {
     color:var(--input_text-color);
@@ -202,17 +82,64 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin: 5px 0;  
 }
 
-/* MARGEN TEXTO EDITAR */
-.container {
+/* BUTTONS */
+.buttonStyle
+{
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* TASKS */
+.Task_Current{opacity: 1;}
+.Task_Complete{opacity: 0.5;}
+
+/* BUTTONS */
+.editButton
+{
+    background-image: url('https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg');
+    background-color: rgb(205, 192, 106);
+}
+.deleteButton
+{
+    background-image: url('../../img/trash_closed_transparent.png');
+    background-color: rgb(188, 113, 113);
+}
+.SendButton
+{
+    background-image: url('https://icon-library.com/images/black-plus-icon/black-plus-icon-24.jpg');
+    align-self: flex-start;
+    margin: 0;
+}
+
+.editButton:hover{background-image: url('../../img/lapiz_movido.png');}
+.deleteButton:hover{background-image: url('../../img/trash_open_transparent.png');}
+.completeButton
+{
+    background-image: url('https://clipart-library.com/images_k/check-mark-symbol-transparent-background/check-mark-symbol-transparent-background-2.png');
+    background-color: rgb(127, 196, 127);
+}
+.uncompleteButton
+{
+    background-image: url('../../img/cruz.png');
+    background-color: rgb(188, 113, 113);
+}
+.completeButton:hover{background-image: url('../../img/check_verde.png');}
+
+/* EDIT BUTTON GUI */
+.container
+{
+    padding: 16px;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-/* IDs */
-#task_name{height: 30px;}
-#task_desc{height: 80px;}
-#current_task_tab, #completed_task_tab
+.taskTabs
 {
     background-color: var(--secondary_background-color);
     border: 5px, var(--secondary_border-color), solid;
@@ -224,9 +151,15 @@ input:hover, textarea:hover{opacity: 0.8;}
     padding-right: 2em;
     background: linear-gradient(180deg, var(--secondary_background-color), var(--secondary_border-color));
 }
-/* EDIT INPUTS GUI */
 
-#newTitle, #newDesc
+
+/* IDs */
+#newTaskName{height: 30px;}
+#newTaskDesc{height: 80px;}
+.createTaskInputs{padding-bottom: 20px;text-align: center;}
+
+/* EDIT INPUTS GUI */
+.editTaskInputs
 {
     width: 100%;
     padding: 12px 20px;
@@ -235,8 +168,9 @@ input:hover, textarea:hover{opacity: 0.8;}
     border: 1px solid #ccc;
     box-sizing: border-box;  
 }
+
 /* EDIT CONFIRMATION BUTTONS */
-#confirm_Changes, #cancel_Changes
+.submitEditButtons
 {
     color: var(--primary_text-color);
     padding: 14px 20px;
@@ -263,7 +197,8 @@ input:hover, textarea:hover{opacity: 0.8;}
     background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
 }
-.modal-content {
+.modal-content
+{
   background-color: var(--secondary_background-color);
   margin: 5% auto 15% auto;
   border: 8px solid var(--secondary_border-color);
@@ -276,6 +211,7 @@ input:hover, textarea:hover{opacity: 0.8;}
 
 
 .task label{float: right;}
+
 .task h2
 {
     margin-bottom: 0%;
@@ -284,7 +220,6 @@ input:hover, textarea:hover{opacity: 0.8;}
     overflow-wrap: break-word;
     white-space: pre-line;
 }
-
 .task p
 {
     word-wrap: break-word;
@@ -293,7 +228,6 @@ input:hover, textarea:hover{opacity: 0.8;}
     margin: 10px;
     text-indent: 0px;
 }
-
 .task
 {
     background-color: var(--primary_background-color);
@@ -304,4 +238,14 @@ input:hover, textarea:hover{opacity: 0.8;}
     padding-bottom: 1em;
     padding-left: 1em;
     padding-right: 1em;
+}
+/* ESTO ES UNA PRUEBA*/
+.input-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
 }
