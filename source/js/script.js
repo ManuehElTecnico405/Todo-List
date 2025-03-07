@@ -40,9 +40,9 @@ function addCurrentTask(task) // AÑADIR TAREAS
     const taskElement = document.createElement('div');
     taskElement.className = `task ${task.status}`;
     taskElement.setAttribute('data-id', task.id); // SE LE AÑADEN LAS CLASES DE ESTA FORMA PARA SIMPLIFICAR EL USO DE LA CACHE
-    taskElement.innerHTML+=`<label><input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode)">
+    taskElement.innerHTML+=`<input type="button" class="buttonStyle Task_CompleteButton" onclick="completeTask(this.parentNode)">
         <input type="button" class="buttonStyle Task_EditButton" onclick="editTask(this.parentNode)">
-        <input type="button" class="buttonStyle Task_TrashButton" onclick="deleteTask(this.parentNode)"></label>
+        <input type="button" class="buttonStyle Task_TrashButton" onclick="deleteTask(this.parentNode)">
         <h2 name="TaskName">${task.name}</h2><p name="TaskDescription">${task.description}</p>`;
     
     if (task.status==="Task_Current") // ENVIA LA TAREA DEPENDIENDO DE SU ESTADO
@@ -128,15 +128,16 @@ function sendEdit(mode) // ENVIAR EDICION
 window.onload = loadCache; // CARGA LA CACHE AL INICIAR
 
 // BUGS:
-// #1: Las tareas completadas tienen un tic en vez de una cruz
-// #2: Mala colision del boton de añadir tareas (VV)
 // #3: Se puede meter codigo en los apartados
 
 // POSIBLE IDEA:
 // TASK DISPLACEMENT
 //document.addEventListener(
 
-
+// COSAS PENDIENTES:
+// BOTON HTML BUG
+// X EN EL CHECK DEL CSS
+// LABEL
 
 
 //SELECT ALL (UNUSED)
