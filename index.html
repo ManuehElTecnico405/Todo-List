@@ -10,22 +10,22 @@
             <img src="./img/favicon.png" width="40" height="40">
             <p>TO-DO_LIST</p>
         </header>
-        <div id="InputsZone">
+        <div class="createTaskInputs">
             <h1>TO-DO LIST</h1>
             <p>Inserte tarea:</p>
             <input type="button" class="buttonStyle SendButton" onclick="setTask()">
             <div class="textboxes">
-                <input type="text" class="textboxes_input" id="task_name" placeholder="Titulo" value="" maxlength="60" onfocus="noEnviar(event)">
-                <textarea class="textboxes_input" id="task_desc" maxlength="200" placeholder="Descripción" onfocus="noEnviar(event)"></textarea>
+                <input type="text" id="newTaskName" class="textboxes_input"  placeholder="Titulo" maxlength="60">
+                <textarea id="newTaskDesc" class="textboxes_input" placeholder="Descripción" maxlength="200"></textarea>
             </div>
         </div>
         <article>
-            <div id="current_task_tab">
+            <div class="taskTabs">
                 <h3>ACTUALES</h3>
                 <div id="task_current"></div>
             </div>
             <br>
-            <div id="completed_task_tab">
+            <div class="taskTabs">
                 <h3>COMPLETADAS</h3>
                 <div id="task_complete"></div>
             </div>
@@ -34,17 +34,19 @@
             <div class="modal-content animate">          
                 <div class="container">
                     <p>INSERTA EL NUEVO TITULO</p>
-                    <input type="text" id="newTitle">
+                    <input type="text" id="editTaskName" class="editTaskInputs" maxlength="60">
                     <p>INSERTA LA NUEVA DESCRIPCION</p>
-                    <textarea id="newDesc" maxlength="200"></textarea>
-                    <input type="submit" id="confirm_Changes" value="CONFIRMAR CAMBIOS" onclick="sendEdit('CONFIRM')">
-                    <input type="submit" id="cancel_Changes" value="CANCELAR CAMBIOS" onclick="sendEdit('DECLINE');">
+                    <textarea id="editTaskDesc" class="editTaskInputs" maxlength="200"></textarea>
+                    <label>
+                        <input type="submit" id="confirm_Changes" class="submitEditButtons" value="CONFIRMAR CAMBIOS" onclick="sendEdit('CONFIRM')">
+                        <input type="submit" id="cancel_Changes" class="submitEditButtons" value="CANCELAR CAMBIOS" onclick="sendEdit('DECLINE');">    
+                    </label>
                 </div>
             </div>
           </div>          
         <footer>
             <p>TO-DO_LIST</p>
-            <p>COPYRIGHT: NSQ NSC</p>
+            <p>COPYRIGHT: NSQ-NSC</p>
         </footer>
         <script src="./source/js/script.js"></script>
     </body>
