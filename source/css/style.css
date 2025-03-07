@@ -23,7 +23,7 @@ h3 {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-style: italic;
+    font-style: normal; 
   }
 
 p {
@@ -197,6 +197,8 @@ input:hover, textarea:hover{opacity: 0.8;}
 {
     display: inline-grid;
     margin: 5px 0;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .textboxes_input
 {
@@ -206,6 +208,14 @@ input:hover, textarea:hover{opacity: 0.8;}
     padding: 2px;
     margin-top: 5px;
     margin: 5px 0;  
+}
+
+/* MARGEN TEXTO EDITAR */
+.container {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 /* IDs */
 #task_name{height: 30px;}
